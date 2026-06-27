@@ -1,6 +1,6 @@
 // src/api.js — all backend calls
 
-const BASE = "https://internship-project-7jy3.vercel.app";
+const BASE = "http://localhost:5000/api";
 
 // Helper: get auth header from localStorage
 const authHeader = () => {
