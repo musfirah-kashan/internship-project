@@ -1,12 +1,7 @@
 // src/api.js — all backend calls
 
-const BASE = "http://localhost:5000/api";
-
-// Helper: get auth header from localStorage
-const authHeader = () => {
-  const user = JSON.parse(localStorage.getItem("user") || "null");
-  return user?.token ? { Authorization: `Bearer ${user.token}` } : {};
-};
+// ✅ This must be your BACKEND Vercel URL + /api
+const BASE = "https://internship-project-7jy3.vercel.app/api";
 
 // ── Categories ────────────────────────────────────────────────────────────────
 export const fetchCategories = async () => {
@@ -17,7 +12,6 @@ export const fetchCategories = async () => {
 };
 
 // ── Products (with optional filters) ─────────────────────────────────────────
-// Returns array of products
 export const fetchProducts = async ({ search = "", categoryId = "", minPrice = "", maxPrice = "", page = 1, limit = 10 } = {}) => {
   const p = new URLSearchParams();
   if (search)     p.append("search",     search);
